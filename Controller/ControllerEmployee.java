@@ -25,21 +25,27 @@ public class ControllerEmployee {
 
     @GetMapping(path = "/add")
     public Employee addEmployee(@RequestParam("firstName") String firstName,
-                                @RequestParam("lastName") String lastName) throws EmployeeStorageIsFullList {
-        return employeeService.add(firstName, lastName);
+                                @RequestParam("lastName") String lastName,
+                                @RequestParam("salary") int salary,
+                                @RequestParam("departmentId") int departmentId) throws EmployeeStorageIsFullList {
+        return employeeService.add(firstName, lastName, salary, departmentId);
     }
 
     @GetMapping(path = "/remove")
     public Employee removeEmployee(@RequestParam("firstName") String firstName,
-                                   @RequestParam("lastName") String lastName) {
+                                   @RequestParam("lastName") String lastName,
+                                   @RequestParam("salary") int salary,
+                                   @RequestParam("departmentId") int departmentId) {
 
-        return employeeService.remove(firstName, lastName);
+        return employeeService.remove(firstName, lastName, salary, departmentId);
     }
 
     @GetMapping(path = "/find")
     public Employee findEmployee(@RequestParam("firstName") String firstName,
-                                 @RequestParam("lastName") String lastName) {
-        return employeeService.find(firstName, lastName);
+                                 @RequestParam("lastName") String lastName,
+                                 @RequestParam("salary") int salary,
+                                 @RequestParam("departmentId") int departmentId) {
+        return employeeService.find(firstName, lastName, salary, departmentId);
     }
 
     @GetMapping("/allEmployees")

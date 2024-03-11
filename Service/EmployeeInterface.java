@@ -10,11 +10,11 @@ import java.util.List;
 
 public interface EmployeeInterface {
 
-    Employee add(String firstName, String lastName) throws EmployeeStorageIsFullList, EmployeeAlreadyAddedInList;
+    Employee add(String firstName, String lastName, int salary, int departmentId) throws EmployeeStorageIsFullList, EmployeeAlreadyAddedInList;
 
-    Employee remove(String firstName, String lastName) throws EmployeeNotFoundInList;
+    Employee remove(String firstName, String lastName, int salary, int departmentId) throws EmployeeNotFoundInList;
 
-    Employee find(String firstName, String lastName) throws EmployeeNotFoundInList;
+    Employee find(String firstName, String lastName, int salary, int departmentId) throws EmployeeNotFoundInList;
 
     Collection<Employee> findCollection();
 }
